@@ -10,3 +10,5 @@ MySQL_password: XXXXX
 Title: liert
 #Lore
 iloSpLore: "梦都饰品"
+
+Msg: "§7[§a梦都饰品§7] §c $item §a激活成功"

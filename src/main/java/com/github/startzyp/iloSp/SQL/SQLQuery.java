@@ -35,7 +35,7 @@ public class SQLQuery {
     }
 
     private static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + database, user, password);
+        return DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + database + "?verifyServerCertificate=false&useSSL=false", user, password);
     }
 
     public static void free(ResultSet rs, Statement st, Connection conn) {

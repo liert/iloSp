@@ -55,10 +55,13 @@ implements Listener {
         }
         ItemStack item = e.getCursor();
         ItemMeta meta = item.getItemMeta();
+        if (meta == null) return;
         if (meta.hasLore()) {
             String s = meta.getLore().toString();
             if (s.contains(Settings.I.iloSpLore)) {
-                p.sendMessage("激活成功");
+                String msg = Settings.I.Msg.replace("$item", "%s");
+                msg = String.format(msg, meta.getDisplayName());
+                p.sendMessage(msg);
             }
         }
     }

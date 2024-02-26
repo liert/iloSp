@@ -1,0 +1,7 @@
+name: iloSp
+version: 1.1
+depend: [ItemLoreOrigin]
+main: com.github.startzyp.iloSp.Main
+commands:
+  ils:
+    description: None!

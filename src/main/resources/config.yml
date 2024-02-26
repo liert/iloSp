@@ -6,7 +6,7 @@ MySQL_Table: XXXXX
 MySQL_user: XXXXX
 MySQL_password: XXXXX
 
-# 饰品背包容量 1.1版本之后弃用
+# 饰品背包容量
 Max: 54
 
 #用于区分，不要与其他容器标题相同

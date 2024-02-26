@@ -8,7 +8,6 @@ public class Settings {
     public String MySQL_user;
     public String MySQL_password;
     public String MySQL_Table;
-    public int Max;
     public String iloSpLore;
     public String Title;
 

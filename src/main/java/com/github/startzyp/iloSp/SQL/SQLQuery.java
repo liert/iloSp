@@ -84,7 +84,7 @@ public class SQLQuery {
 
     public static PackData getPlayerData(Player p) {
         ArrayList<ItemStack> list = new ArrayList<>();
-        block8: {
+        again: {
             Connection conn = null;
             PreparedStatement ps = null;
             ResultSet rs = null;
@@ -107,11 +107,11 @@ public class SQLQuery {
             catch (SQLException e) {
                 e.printStackTrace();
                 SQLQuery.free(rs, ps, conn);
-                break block8;
+                break again;
             }
             SQLQuery.free(rs, ps, conn);
         }
-        return new PackData(Settings.I.Max, list);
+        return new PackData(9, list, list.size() == 0);
     }
 
     public static List<ItemStack> getPlayerItem(Player p) {

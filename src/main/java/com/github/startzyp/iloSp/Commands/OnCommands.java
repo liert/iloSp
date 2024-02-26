@@ -13,10 +13,6 @@ public class OnCommands implements CommandExecutor {
         }
         Player p = (Player)sender;
         PackData pd = PackData.getPackData(p);
-        if (pd == null) {
-            p.sendMessage("未找到饰品背包");
-            return true;
-        }
         pd.openInv(p);
         return true;
     }

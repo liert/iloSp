@@ -2,36 +2,49 @@ package com.github.startzyp.iloSp.Data;
 
 import com.github.startzyp.iloSp.Config.Settings;
 import com.github.startzyp.iloSp.SQL.SQLQuery;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+
+import java.util.*;
+
+import com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class PackData {
+    public static final ArrayList<Integer> indexs = Lists.newArrayList(0, 2, 3, 5, 6, 8);
     private static final Map<UUID, PackData> packMap = new HashMap<>();
     private final int slot;
+    private final boolean first;
     private List<ItemStack> items;
 
-    public PackData(int slot, List<ItemStack> items) {
+    public PackData(int slot, List<ItemStack> items, boolean first) {
         this.slot = slot;
         this.items = items;
+        this.first = first;
     }
 
     public void openInv(Player p) {
-        int max = this.slot;
         String title = Settings.I.Title;
-        Inventory inv = Bukkit.createInventory(null, max, title);
-        int i = 0;
-        while (i < this.items.size()) {
-            if (i >= max) break;
-            if (this.items.get(i) != null) {
-                inv.setItem(i, this.items.get(i));
+        Inventory inv = Bukkit.createInventory(null, this.slot, title);
+        if (this.first) {
+            ItemStack itemStack = new ItemStack(160, 1, (short)14);
+            ItemMeta itemMeta = itemStack.getItemMeta();
+            itemMeta.setDisplayName("§c隔离板");
+            itemStack.setItemMeta(itemMeta);
+            for (int index: PackData.indexs) {
+                inv.setItem(index, itemStack);
             }
-            ++i;
+        }else{
+            int i = 0;
+            while (i < this.items.size()) {
+                if (i >= this.slot) break;
+                if (this.items.get(i) != null) {
+                    inv.setItem(i, this.items.get(i));
+                }
+                ++i;
+            }
         }
         p.openInventory(inv);
     }

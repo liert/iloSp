@@ -11,6 +11,8 @@ public class Settings {
     public String iloSpLore;
     public String Title;
     public String Msg;
+    public String ActivateMsg;
+    public String LimitMsg;
     public Settings() {
         I = this;
     }

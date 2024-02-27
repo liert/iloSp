@@ -28,6 +28,7 @@ public class PackData {
     public void openInv(Player p) {
         String title = Settings.I.Title;
         Inventory inv = Bukkit.createInventory(null, this.slot, title);
+//        inv.setMaxStackSize(1);
         if (this.first) {
             ItemStack itemStack = new ItemStack(160, 1, (short)14);
             ItemMeta itemMeta = itemStack.getItemMeta();

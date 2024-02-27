@@ -19,7 +19,6 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import javax.swing.*;
 import java.util.List;
 
 public class PlayerListeners
@@ -66,7 +65,7 @@ implements Listener {
         if (clickIndex > 9) {
             ClickType clickType = e.getClick();
             ItemStack itemStack = e.getCurrentItem();
-            p.sendMessage(itemStack.toString() + clickType.isShiftClick());
+//            p.sendMessage(itemStack.toString() + clickType.isShiftClick());
             meta = itemStack.getItemMeta();
             if (meta == null) return;
             if (itemStack.getAmount() > 1 && clickType.isShiftClick()) {

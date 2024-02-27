@@ -11,6 +11,6 @@ Title: liert
 #Lore
 iloSpLore: "梦都饰品"
 
-Msg: "§7[§a梦都饰品§7] §c $item §a激活成功"
-ActivateMsg: "§7[§a梦都饰品§7] §c $item §a已激活，请勿重复放入！"
-LimitMsg: "§7[§a梦都饰品§7] §c $item §a数量过多！"
+Msg: "§7[§a梦都饰品§7]§c $item §a激活成功"
+ActivateMsg: "§7[§a梦都饰品§7]§c $item §a已激活，请勿重复放入！"
+LimitMsg: "§7[§a梦都饰品§7]§c $item §a数量过多！"
